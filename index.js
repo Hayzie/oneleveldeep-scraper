@@ -32,7 +32,7 @@ app.get('/tranlated',function(req, res){
      //insert google translate element
     $('body').append(`<div style="{display:none;}" id="google_translate_element"></div>
      <script type="text/javascript">
-     $.cookie('googtrans','/en/fr');
+     $.cookie('googtrans','/en/hi');
      </script>
     <script type="text/javascript">
     function googleTranslateElementInit() {
@@ -65,7 +65,8 @@ app.get('/', function (req, res) {
     $('.hover-bg-purple-light',html).each(function(){
       const text = $(this).text();
       const url  = $(this).attr('href');
-      links.push({title:text,url:parentDomain+url});
+      const image  = $(this).find('img').attr('src')
+      links.push({title:text,url:parentDomain+url, image:image});
     })
     //return links
     res.sendFile(path.join(__dirname+'/index.html'));
