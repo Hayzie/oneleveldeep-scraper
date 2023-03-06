@@ -82,6 +82,9 @@ $("script").each(function() {
 		body > .skiptranslate {
                        display: none !important;
                    }
+		   .goog-te-gadget{
+		    display: none !important;
+		   }
 		</style>`);
 
      //insert google translate element
