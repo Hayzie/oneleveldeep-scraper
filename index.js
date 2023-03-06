@@ -3,12 +3,12 @@ const  axios = require('axios');
 const express = require('express');
 const path = require('path');
 const { response } = require('express');
-//const cors = require('cors');
+const cors = require('cors');
 const app = express()
 
 const links =[];
 const parentDomain = 'https://www.classcentral.com';
-//app.use(cors());
+app.use(cors());
 
 app.get('/links',function(req, res){
       res.json(links);
