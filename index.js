@@ -18,11 +18,54 @@ app.get('/tranlated',function(req, res){
   .then(function (response) {
     const html = response.data;
     const $ = cheerio.load(html);
+
+    $("a").each(function() {
+      var url = $(this).attr("href");
+      if (url[0]=='/') {
+         $(this).attr("href", parentDomain+url);
+      } 
+  });
+
+  $("img").each(function() {
+    var url = $(this).attr("src");
+    if (url[0]=='/') {
+       $(this).attr("src", parentDomain+url);
+    } 
+});
+
+$("link").each(function() {
+  var url = $(this).attr("href");
+  if (url[0]=='/') {
+     $(this).attr("href", parentDomain+url);
+  } 
+});
+
+$("iframe").each(function() {
+  var url = $(this).attr("src");
+  if (url[0]=='/') {
+     $(this).attr("src", parentDomain+url);
+  } 
+});
+
+$("script").each(function() {
+  var url= $(this).get()[0].attribs['src']; 
+  console.log(url);
+  try {
+    if (url[0]=='/' && url[1]!='/') {
+      $(this).get()[0].attribs.src = parentDomain+url;
+      console.log($(this).get()[0].attribs['src']);
+   } 
+  } catch (error) {
+    
+  }
+ 
+});
     
     //insert google translate links into the header
     $('head').append(`<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>`);
     
+
     //hide google translate widgets
     $('head').append(`<style type="text/css">
 		.goog-te-banner-frame.skiptranslate{display:none!important;}
@@ -41,7 +84,10 @@ app.get('/tranlated',function(req, res){
     </script>
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>`);
-    $.html();
+   
+   
+   
+     $.html();
 
     res.send($.html());
     
