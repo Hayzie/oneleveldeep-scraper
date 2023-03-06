@@ -79,11 +79,8 @@ $("script").each(function() {
 		z-index: -9999 !important;
 		}
 		
-		.goog-te-banner-frame.skiptranslate {
-                 display: none !important;
-                 } 
-                   body {
-                     top: 0px !important; 
+		body > .skiptranslate {
+                       display: none !important;
                    }
 		</style>`);
 
@@ -108,11 +105,9 @@ $("script").each(function() {
 		display: none !important;
 		z-index: -9999 !important;
 		}
-		.goog-te-banner-frame.skiptranslate {
-                 display: none !important;
-                 } 
-                   body {
-                     top: 0px !important; 
+		
+		body > .skiptranslate {
+                       display: none !important;
                    }
 		</style>`);
 	 
