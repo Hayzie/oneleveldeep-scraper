@@ -3,10 +3,12 @@ const  axios = require('axios');
 const express = require('express');
 const path = require('path');
 const { response } = require('express');
+const cors = require('cors');
 const app = express()
 
 const links =[];
 const parentDomain = 'https://www.classcentral.com';
+app.use(cors());
 
 app.get('/links',function(req, res){
       res.json(links);
@@ -60,7 +62,8 @@ $("script").each(function() {
   }
  
 });
-    
+     
+    $('head').prepend(`<base href="https://www.classcentral.com" >`);
     //insert google translate links into the header
     $('head').append(`<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js" integrity="sha512-3j3VU6WC5rPQB4Ld1jnLV7Kd5xr+cq9avvhwqzbH/taCRNURoeEpoPBK9pDyeukwSxwRPJ8fDgvYXd6SkaZ2TA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>`);
