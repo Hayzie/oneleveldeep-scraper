@@ -71,11 +71,12 @@ $("script").each(function() {
 
     //hide google translate widgets
     $('head').append(`<style type="text/css">
-		.goog-te-banner-frame.skiptranslate{display:none!important; visibility: hidden !important;}
+		.goog-te-banner-frame.skiptranslate{display:none!important; visibility: hidden !important; z-index: -9999 !important;}
 		body{top:0px!important;}
 		.VIpgJd-ZVi9od-ORHb-OEVmcd{
 		visibility: hidden !important;
 		display: none !important;
+		z-index: -9999 !important;
 		}
 		</style>`);
 
