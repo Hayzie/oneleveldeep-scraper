@@ -73,6 +73,9 @@ $("script").each(function() {
     $('head').append(`<style type="text/css">
 		.goog-te-banner-frame.skiptranslate{display:none!important;}
 		body{top:0px!important;}
+		.VIpgJd-ZVi9od-ORHb-OEVmcd{
+		visibility: hidden !important;
+		}
 		</style>`);
 
      //insert google translate element
