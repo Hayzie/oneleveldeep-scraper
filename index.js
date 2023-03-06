@@ -82,7 +82,7 @@ $("script").each(function() {
 		body > .skiptranslate {
                        display: none !important;
                    }
-		 body > .goog-te-gadget{
+		 body > .goog-te-gadget, .skiptranslate{
 		    display: none !important;
 		   }
 		</style>`);
@@ -113,7 +113,7 @@ $("script").each(function() {
                        display: none !important;
                    }
 		   
-		    body > .goog-te-gadget{
+		    body > .goog-te-gadget, .skiptranslate{
 		    display: none !important;
 		   }
 		</style>`);
