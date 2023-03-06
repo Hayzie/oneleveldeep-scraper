@@ -78,6 +78,13 @@ $("script").each(function() {
 		display: none !important;
 		z-index: -9999 !important;
 		}
+		
+		.goog-te-banner-frame.skiptranslate {
+                 display: none !important;
+                 } 
+                   body {
+                     top: 0px !important; 
+                   }
 		</style>`);
 
      //insert google translate element
@@ -101,6 +108,12 @@ $("script").each(function() {
 		display: none !important;
 		z-index: -9999 !important;
 		}
+		.goog-te-banner-frame.skiptranslate {
+                 display: none !important;
+                 } 
+                   body {
+                     top: 0px !important; 
+                   }
 		</style>`);
 	 
    
