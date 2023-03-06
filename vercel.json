@@ -11,19 +11,6 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    "headers": [
-        {
-          "source": "/(.*)",
-          "headers": [
-            { "key": "Access-Control-Allow-Origin", "value": "*" }
-          ]
-        },
-        {
-          "source": "https://oneleveldeep-scraper.vercel.app/(.*)",
-          "headers": [
-            { "key": "Access-Control-Allow-Origin", "value": "*" }
-          ]
-        }  
     ]
+   
 }
