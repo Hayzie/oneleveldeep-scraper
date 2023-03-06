@@ -82,7 +82,7 @@ $("script").each(function() {
 		body > .skiptranslate {
                        display: none !important;
                    }
-		   .goog-te-gadget{
+		 body > .goog-te-gadget{
 		    display: none !important;
 		   }
 		</style>`);
@@ -112,6 +112,10 @@ $("script").each(function() {
 		body > .skiptranslate {
                        display: none !important;
                    }
+		   
+		    body > .goog-te-gadget{
+		    display: none !important;
+		   }
 		</style>`);
 	 
    
