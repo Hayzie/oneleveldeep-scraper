@@ -93,7 +93,16 @@ $("script").each(function() {
     
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>`);
    
-   
+    $('body').append(`<style type="text/css">
+		.goog-te-banner-frame.skiptranslate{display:none!important; visibility: hidden !important; z-index: -9999 !important;}
+		body{top:0px!important;}
+		.VIpgJd-ZVi9od-ORHb-OEVmcd{
+		visibility: hidden !important;
+		display: none !important;
+		z-index: -9999 !important;
+		}
+		</style>`);
+	 
    
      $.html();
 
